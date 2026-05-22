@@ -4,6 +4,7 @@ import {
   Menu, X, Star, Sparkles, MessageSquare, 
   ArrowUpRight, ShieldCheck, Mail, Phone, MapPin 
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 // Data imports
 import { TESTIMONIALS } from './data';
@@ -427,6 +428,7 @@ export default function App() {
         </div>
       </footer>
 
+      <Analytics />
     </div>
   );
 }

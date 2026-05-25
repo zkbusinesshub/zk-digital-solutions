@@ -51,8 +51,16 @@ export default function AboutSection({ darkMode }: AboutSectionProps) {
               
               {/* Graphic Logo concept representation */}
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center font-display font-extrabold text-white text-xl shadow-[0_4px_15px_rgba(6,182,212,0.3)]">
-                  ZK
+                <div className="w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center font-display font-extrabold text-white text-xl shadow-[0_4px_15px_rgba(6,182,212,0.3)] relative">
+                  <img 
+                    src="/logo.png" 
+                    alt="ZK" 
+                    className="w-full h-full object-cover hidden absolute inset-0" 
+                    onLoad={(e) => { e.currentTarget.classList.remove('hidden'); }} 
+                    onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                    referrerPolicy="no-referrer"
+                  />
+                  <span className="logo-fallback z-10">ZK</span>
                 </div>
                 <div>
                   <h4 className={`font-display font-bold text-sm ${darkMode ? 'text-white' : 'text-slate-900'}`}>

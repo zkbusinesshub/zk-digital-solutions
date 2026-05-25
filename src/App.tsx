@@ -135,8 +135,16 @@ export default function App() {
           
           {/* Logo brand signature */}
           <a href="#hero-section" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-display font-extrabold text-white text-base transition-transform group-hover:scale-105 shadow-md">
-              ZK
+            <div className="w-9 h-9 rounded-xl overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-display font-extrabold text-white text-base transition-transform group-hover:scale-105 shadow-md relative">
+              <img 
+                src="/logo.png" 
+                alt="ZK" 
+                className="w-full h-full object-cover hidden absolute inset-0" 
+                onLoad={(e) => { e.currentTarget.classList.remove('hidden'); }} 
+                onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                referrerPolicy="no-referrer"
+              />
+              <span className="logo-fallback z-10">ZK</span>
             </div>
             <div className="flex flex-col leading-none font-sans">
               <span className={`font-display font-bold text-sm tracking-wide ${darkMode ? 'text-white' : 'text-slate-900'}`}>
@@ -357,11 +365,19 @@ export default function App() {
       }`}>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
           
-          {/* Logo brand and signature block */}
+          {/* Logo brand signature and signature block */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-display font-extrabold text-white text-base">
-                ZK
+              <div className="w-9 h-9 rounded-xl overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-display font-extrabold text-white text-base relative">
+                <img 
+                  src="/logo.png" 
+                  alt="ZK" 
+                  className="w-full h-full object-cover hidden absolute inset-0" 
+                  onLoad={(e) => { e.currentTarget.classList.remove('hidden'); }} 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }} 
+                  referrerPolicy="no-referrer"
+                />
+                <span className="logo-fallback z-10">ZK</span>
               </div>
               <div className="flex flex-col leading-none">
                 <span className={`font-display font-bold text-sm tracking-wide ${darkMode ? 'text-white' : 'text-slate-900'}`}>
